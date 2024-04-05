@@ -1,2 +1,2 @@
 # hello-actix-web
-actix + sqlx demo api
+`actix-web` + `sqlx` demo api.

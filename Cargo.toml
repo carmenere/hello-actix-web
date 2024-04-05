@@ -1,0 +1,23 @@
+[package]
+name = "hello-actix"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+actix-web = { version =  "4.2.1" }
+env_logger = { version = "0.11.2" }
+log = { version =  "0.4.20" }
+serde = { version = "1.0.196", features = ["derive"] }
+serde_json = { version = "1.0.113" }
+sqlx = { version = "0.7.3" , default_features = false, features = ["postgres", "runtime-tokio-native-tls", "macros", "chrono"]}
+tokio = { version = "1.34.0", features = ["full"] }
+
+[profile.release]
+strip = "symbols"
+
+[profile.dev]
+opt-level = 3
+debug = 1
